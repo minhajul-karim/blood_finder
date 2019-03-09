@@ -1,0 +1,15 @@
+#search_input
+{
+	width: 400px;
+	border: 1px solid #5A6268;
+}
+
+
+@media screen and (max-width: 530px)
+{	
+
+	#search_input
+	{
+		width: 200px;
+	}
+}
