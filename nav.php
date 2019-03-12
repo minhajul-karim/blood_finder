@@ -16,7 +16,7 @@
                     <a class="nav-link js-scroll-trigger" href="index.php#contact">Contact</a>
                 </li>
                 <li class="nav-item">
-                    <a class="nav-link js-scroll-trigger" href="list.php">Donors</a>
+                    <a class="nav-link js-scroll-trigger" href="donors.php">Donors</a>
                 </li>
                 <li class="nav-item">
                     <a class="nav-link js-scroll-trigger" href="donate.php">Donate</a>

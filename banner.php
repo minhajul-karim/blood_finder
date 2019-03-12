@@ -10,11 +10,10 @@
             <form class="text-center" action="" method="post">
                 <div class="form-row">
                     <div class="col">
-                    <!-- First name -->
                         <input type="text" id="search_input" class="form-control" placeholder="Enter your query..." name="search">
                     </div>
                     <div class="col">
-                        <button type="submit" class="btn btn-light">Search</button>
+                        <button type="submit" class="btn btn-light" name="sub">Search</button>
                     </div>
                 </div>
             </form>
@@ -42,10 +41,10 @@
     //$query = $mysqli->query("SELECT * FROM donors WHERE blood_group = '$searchq'") or die("Could not search");
 
     $row_count = $query->num_rows;
+    //$_SESSION['abc'] = $row_count;
 
     if ($row_count == 0)
     {
-      
       echo '<br /><br /><br />
       <p class="text-center text-uppercase font-weight-bold">Nothing found.</p>
       <br /><br /><br /><br /><br /><br />';
