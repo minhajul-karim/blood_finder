@@ -24,27 +24,31 @@
 
 <?php
 
+  // Include the database connection file
   include 'db_connection.php';
 
   $output = '';
   if (isset($_POST['search']))
     $input = $_POST['search'];
 
+  // Check if any search has been made or if the search field is not EMPTY
   if(isset($input) && $input != '')
   {
 
     $searchq = $_POST['search'];
+
+    // Match and replace regular expression
     $searchq = preg_replace("#[^0-9a-z+-]#i", "", $searchq);
 
+    // Query to search after sanitizing the input
     $query = $mysqli->query("SELECT * FROM donors WHERE blood_group = '$searchq' or first_name LIKE '%$searchq%' or last_name LIKE '%$searchq%' or  district LIKE '%$searchq%'") or die("Could not search");
 
-    //$query = $mysqli->query("SELECT * FROM donors WHERE blood_group = '$searchq'") or die("Could not search");
-
+    // Calculating the number of rows after the search
     $row_count = $query->num_rows;
-    //$_SESSION['abc'] = $row_count;
 
     if ($row_count == 0)
     {
+      // If there is no output
       echo '<br /><br /><br />
       <p class="text-center text-uppercase font-weight-bold">Nothing found.</p>
       <br /><br /><br /><br /><br /><br />';
